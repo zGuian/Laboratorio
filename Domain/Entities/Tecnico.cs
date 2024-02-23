@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Entities
+﻿namespace Domain.Entities
 {
     public class Tecnico
     {
+        public required int Id { get; set; }
+        public required string Nome { get; set; }
 
+        public Tecnico()
+        {
+        }
+
+        public Tecnico(int id, string nome)
+        {
+            Id = id;
+            Nome = nome;
+        }
     }
 }
