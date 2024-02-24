@@ -1,12 +1,12 @@
-﻿using Application.DTOs;
+﻿using ApplicationArq.DTOs;
 using Domain.Entities;
 
-namespace Application.Interfaces
+namespace ApplicationArq.Interfaces
 {
     public interface ITecnicoRepository
     {
         Task<IEnumerable<TecnicoDTO>> GetTecnico();
         Task<TecnicoDTO> GetTecnico(int id);
-        void InserirTecnico(Tecnico tecnico);
+        void InserirTecnico(string nome);
     }
 }

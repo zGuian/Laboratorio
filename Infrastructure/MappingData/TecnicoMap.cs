@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.MappingData
 {
-    internal class TecnicoMap : IEntityTypeConfiguration<Tecnico>
+    internal class TecnicoMap : IEntityTypeConfiguration<TecnicoDto>
     {
-        public void Configure(EntityTypeBuilder<Tecnico> builder)
+        public void Configure(EntityTypeBuilder<TecnicoDto> builder)
         {
             builder.ToTable("TB_TECNICOS");
             builder.HasKey(x => x.Id);

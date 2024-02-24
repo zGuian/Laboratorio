@@ -1,4 +1,4 @@
-﻿namespace Application.DTOs
+﻿namespace ApplicationArq.DTOs
 {
     public class TecnicoDTO
     {

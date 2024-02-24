@@ -9,7 +9,7 @@ namespace Infrastructure.DataContext
         {
         }
 
-        public DbSet<Tecnico> Tecnicos { get; set; }
+        public DbSet<TecnicoDto> Tecnicos { get; set; }
         public DbSet<Equipamento> Equipamentos { get; set; }
         public DbSet<Registro> Registro { get; set; }
 
