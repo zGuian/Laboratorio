@@ -7,8 +7,8 @@
         public DateTime? Saida { get; set; }
         public string? Observacao { get; set; }
         public int IdTecnico { get; set; }
-        public Equipamento Tecnico { get; set; }
+        public Equipamento? Tecnico { get; set; }
         public int IdEquipamento { get; set; }
-        public Equipamento Equipamento { get; set; }
+        public Equipamento? Equipamento { get; set; }
     }
 }

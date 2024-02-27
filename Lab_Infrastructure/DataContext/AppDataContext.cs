@@ -1,4 +1,5 @@
-﻿using Lab_Domain.Entities;
+﻿using Lab_Application.DTOs;
+using Lab_Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lab_Infrastructure.DataContext
@@ -9,7 +10,7 @@ namespace Lab_Infrastructure.DataContext
         {
         }
 
-        public DbSet<TecnicoDto> Tecnicos { get; set; }
+        public DbSet<Tecnico> Tecnicos { get; set; }
         public DbSet<Equipamento> Equipamentos { get; set; }
         public DbSet<Registro> Registro { get; set; }
 

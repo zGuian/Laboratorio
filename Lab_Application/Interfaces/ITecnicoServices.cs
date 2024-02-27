@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Lab_Application.DTOs;
 
 namespace Lab_Application.Interfaces
 {
-    internal interface ITecnicoServices
+    public interface ITecnicoServices
     {
+        void AtualizarTecnico(TecnicoDTO tecnicoDTO);
+        void CadastraTecnico(TecnicoDTO tecnicoDto);
+        Task<IEnumerable<TecnicoDTO>> BuscaTecnicos();
+        Task<TecnicoDTO> BuscaTecnicosPorId(int id);
     }
 }

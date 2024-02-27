@@ -5,10 +5,9 @@ namespace Lab_Application.Interfaces
 {
     public interface ITecnicoRepository
     {
-        Task<IEnumerable<TecnicoDTO>> GetTecnico();
-
-        Task<TecnicoDTO> GetTecnico(int id);
-
+        Task<IEnumerable<TecnicoDTO>> GetTecnicoAsync();
+        Task<TecnicoDTO> GetTecnicoAsync(int id);
         void InserirTecnico(Tecnico tecnico);
+        void AtualizaTecnico(int id, Tecnico tecnico);
     }
 }

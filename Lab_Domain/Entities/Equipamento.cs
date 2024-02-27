@@ -7,19 +7,19 @@ namespace Lab_Domain.Entities
         public int Id { get; set; }
         public EnumTipoEquipamento TipoEquipamento { get; set; }
         public string? SerialNumber { get; set; }
-        public string? Hostname { get; set; }
+        public string? Inventario { get; set; }
         public bool Cadeado { get; set; }
 
         public Equipamento()
         {
         }
 
-        public Equipamento(int id, EnumTipoEquipamento enumTipo, string serialNumber, string hostname, bool cadeado)
+        public Equipamento(int id, EnumTipoEquipamento enumTipo, string serialNumber, string inventario, bool cadeado)
         {
             Id = id;
             TipoEquipamento = enumTipo;
             SerialNumber = serialNumber;
-            Hostname = hostname;
+            Inventario = inventario;
             Cadeado = cadeado;
         }
     }

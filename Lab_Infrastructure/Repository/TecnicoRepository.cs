@@ -1,62 +1,39 @@
-﻿using Dapper;
-using Lab_Application.DTOs;
+﻿using Lab_Application.DTOs;
 using Lab_Application.Interfaces;
 using Lab_Domain.Entities;
-using Lab_Infrastructure.Factory;
-using Lab_Infrastructure.Queries;
 
 namespace Lab_Infrastructure.Repository
 {
-    internal class TecnicoRepository(ConexaoBanco conexao) : ITecnicoRepository
+    public class TecnicoRepository : ITecnicoRepository
     {
-        private readonly ConexaoBanco _conn = conexao;
+        private readonly ISqlDataAcess _dataAcess;
 
-        public async Task<IEnumerable<TecnicoDTO>> GetTecnico()
+        public TecnicoRepository(ISqlDataAcess dataAcess)
         {
-            try
-            {
-                using (var cn = _conn.ConectarAsync())
-                {
-                    var query = TecnicoQueries.GetTecnicosQuery();
-                    var tecDtos = cn.Query<TecnicoDTO>(query.Query, query.Parameters);
-                    return tecDtos;
-                }
-            }
-            catch (Exception)
-            {
-                throw new NotImplementedException();
-            }
+            _dataAcess = dataAcess;
         }
 
-        public async Task<TecnicoDTO> GetTecnico(int id)
+        public async Task<IEnumerable<TecnicoDTO>> GetTecnicoAsync()
         {
-            var query = TecnicoQueries.GetTecnicosQuery(id);
-            try
-            {
-                using (var cn = _conn.ConectarAsync())
-                {
-                    var tecnico = await cn.QueryFirstOrDefaultAsync<TecnicoDTO>(query.Query, query.Parameters);
-                    return tecnico;
-                }
-            }
-            catch (Exception)
-            {
-                throw new NotImplementedException();
-            }
+            var tecDTO = await _dataAcess.LoadData<TecnicoDTO, dynamic>("[dbo].[labTecnico_GetAll]", new { });
+            return tecDTO;
+        }
+
+        public async Task<TecnicoDTO> GetTecnicoAsync(int id)
+        {
+            var tecnico = await _dataAcess.LoadData<TecnicoDTO, dynamic>("[dbo].[labTecnico_GetById]", new { id });
+            var tResp = tecnico.FirstOrDefault() ?? throw new Exception();
+            return tResp;
         }
 
         public async void InserirTecnico(Tecnico tecnico)
         {
-            var query = TecnicoQueries.InsertTecnicos(tecnico);
-            try
-            {
-                var connection = _conn.ConectarAsync();
-                await connection.QuerySingleAsync(query.Query, query.Parameters);
-            }
-            catch (Exception)
-            {
-                throw new NotImplementedException();
-            }
+            await _dataAcess.SaveData("[dbo].[labTecnico_Insert]", new { tecnico.Nome });
+        }
+
+        public async void AtualizaTecnico(int id, Tecnico tecnico)
+        {
+            await _dataAcess.SaveData("[dbo].[labTecnico_UpdateTec]", tecnico);
         }
     }
 }

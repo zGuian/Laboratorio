@@ -1,7 +1,12 @@
+using Lab_WebUI.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add _services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDependencyInjectionConfiguration();
+builder.Services.AddAutoMapperConfiguration();
+Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
 var app = builder.Build();
 

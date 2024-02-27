@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Lab_WebUI.Models.TecnicoModel>
+
+@{
+    ViewBag.Title = "INDEX";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="CadastroTecnico" asp-controller="Tecnico" method="get">
+    <button class="btn btn-primary">Criar</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Nome)
+                </td>
+                <td>
+                    <a asp-controller="Tecnico" asp-action="AtualizaTecnico" asp-route-id="@item.Id" class="btn btn-dark">Editar</a>
+                    @* <a asp-controller="Tecnico" asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalhes</a> *@
+                    @* <a asp-controller="" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Deletar</a> *@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
