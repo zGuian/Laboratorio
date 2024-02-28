@@ -1,4 +1,4 @@
-namespace Lab_WebUI.Models
+namespace Lab_WebUI.Models.ErrorModels
 {
     public class ErrorViewModel
     {

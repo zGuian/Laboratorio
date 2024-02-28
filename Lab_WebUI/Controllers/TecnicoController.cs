@@ -1,7 +1,9 @@
 ﻿using Lab_Application.DTOs;
 using Lab_Application.Interfaces;
-using Lab_WebUI.Models;
+using Lab_WebUI.Models.ErrorModels;
+using Lab_WebUI.Models.TecnicoModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace Lab_WebUI.Controllers
 {
@@ -30,18 +32,20 @@ namespace Lab_WebUI.Controllers
         [Route("cadastrotecnico")]
         public IActionResult CadastroTecnico()
         {
-            return View();
+            var model = new CadastraTecnicoModel();
+            return View(model);
         }
 
         [Route("cadastrotecnico")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CadastroTecnico(TecnicoDTO tecnicoDTO)
+        public IActionResult CadastroTecnico(TecnicoModel tecnicoModel)
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction(nameof(CadastroTecnico));
+                return View();
             }
+            var tecnicoDTO = new TecnicoDTO { Nome = tecnicoModel.Nome };
             _services.CadastraTecnico(tecnicoDTO);
             return RedirectToAction(nameof(Index));
         }
@@ -61,14 +65,19 @@ namespace Lab_WebUI.Controllers
         [Route("atualizatecnico")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AtualizaTecnico(TecnicoDTO tecnicoDTO)
+        public IActionResult AtualizaTecnico(int id, TecnicoDTO tecnicoDTO)
         {
             if (!ModelState.IsValid)
             {
                 return RedirectToAction(nameof(CadastroTecnico));
             }
-            _services.AtualizarTecnico(tecnicoDTO);
+            _services.AtualizarTecnico(id, tecnicoDTO);
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

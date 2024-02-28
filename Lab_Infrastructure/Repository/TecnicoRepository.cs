@@ -22,8 +22,13 @@ namespace Lab_Infrastructure.Repository
         public async Task<TecnicoDTO> GetTecnicoAsync(int id)
         {
             var tecnico = await _dataAcess.LoadData<TecnicoDTO, dynamic>("[dbo].[labTecnico_GetById]", new { id });
-            var tResp = tecnico.FirstOrDefault() ?? throw new Exception();
-            return tResp;
+            return tecnico.FirstOrDefault() ?? throw new Exception();
+        }
+
+        public async Task<TecnicoDTO> GetTecnicoAsync(string nome)
+        {
+            var tecnico = await _dataAcess.LoadData<TecnicoDTO, dynamic>("[dbo].[labTecnico_GetByName", new { nome });
+            return tecnico.FirstOrDefault() ?? throw new Exception();
         }
 
         public async void InserirTecnico(Tecnico tecnico)

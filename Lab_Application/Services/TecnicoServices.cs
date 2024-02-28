@@ -26,16 +26,21 @@ namespace Lab_Application.Services
             return await _repository.GetTecnicoAsync(id);
         }
 
+        public async Task<TecnicoDTO> BuscaTecnicoPorNome(string nome)
+        {
+            return await _repository.GetTecnicoAsync(nome);
+        }
+
         public void CadastraTecnico(TecnicoDTO tecnicoDto)
         {
             var tecnico = _mapper.Map<Tecnico>(tecnicoDto);
             _repository.InserirTecnico(tecnico);
         }
 
-        public void AtualizarTecnico(TecnicoDTO tecnicoDTO)
+        public void AtualizarTecnico(int id, TecnicoDTO tecnicoDTO)
         {
             var tecnico = _mapper.Map<Tecnico>(tecnicoDTO);
-            _repository.InserirTecnico(tecnico);
+            _repository.AtualizaTecnico(id, tecnico);
         }
     }
 }

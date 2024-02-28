@@ -1,4 +1,4 @@
-using Lab_WebUI.Models;
+using Lab_WebUI.Models.ErrorModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
