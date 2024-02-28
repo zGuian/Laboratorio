@@ -1,6 +1,4 @@
-﻿using Lab_WebUI.Validators;
-
-namespace Lab_WebUI.Models.TecnicoModels
+﻿namespace Lab_WebUI.Models.TecnicoModels
 {
     public class TecnicoModel
     {

@@ -38,7 +38,7 @@ namespace Lab_Infrastructure.Repository
 
         public async void AtualizaTecnico(int id, Tecnico tecnico)
         {
-            await _dataAcess.SaveData("[dbo].[labTecnico_UpdateTec]", tecnico);
+            await _dataAcess.SaveData("[dbo].[labTecnico_Update]", tecnico);
         }
     }
 }

@@ -3,7 +3,7 @@ using Lab_WebUI.Validators;
 
 namespace Lab_WebUI.Models.TecnicoModels
 {
-    public class CadastraTecnicoModel
+    internal class CadastraTecnicoModel
     {
         [CheckNomeRepetido(typeof(ITecnicoServices))]
         public string? Nome { get; set; }
