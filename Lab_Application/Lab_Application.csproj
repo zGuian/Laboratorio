@@ -14,4 +14,8 @@
     <ProjectReference Include="..\Lab_Domain\Lab_Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validators\" />
+  </ItemGroup>
+
 </Project>

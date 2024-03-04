@@ -20,6 +20,7 @@ namespace Lab_Infrastructure.DataContext
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new LaboratorioConfig());
+            modelBuilder.ApplyConfiguration(new UsuarioConfig());
             //modelBuilder.ApplyConfiguration(new TecnicoConfig());
             //modelBuilder.ApplyConfiguration(new EquipamentoConfig());
             //modelBuilder.ApplyConfiguration(new RegistroConfig());

@@ -3,7 +3,7 @@ using Lab_Infrastructure.MappingData;
 
 namespace Lab_Infrastructure.Queries
 {
-    public static class TecnicoQueries
+    internal static class TecnicoQueries
     {
         public static QueryModel GetTecnicosQuery()
         {

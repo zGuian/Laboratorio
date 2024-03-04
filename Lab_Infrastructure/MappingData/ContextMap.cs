@@ -7,5 +7,6 @@
         public static string GetRegistroTable() => "[TB_REGISTRO]";
 
         public static string GetEquipamentoTable() => "[TB_EQUIPAMENTO]";
+        public static string GetLaboratorioTable() => "[TB_Laboratorio]";
     }
 }
