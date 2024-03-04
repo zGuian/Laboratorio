@@ -6,8 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDependencyInjectionConfiguration();
 builder.Services.AddAutoMapperConfiguration();
-Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+builder.Services.AddDataBaseConfiguration(builder);
 
+Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

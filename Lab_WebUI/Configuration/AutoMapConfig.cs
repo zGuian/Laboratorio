@@ -10,7 +10,7 @@ namespace Lab_WebUI.Configuration
             var mappingConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new TecnicoProfile());
-                mc.AddProfile(new EquipamentoProfile());
+                mc.AddProfile(new LaboratorioProfile());
             });
 
             var mapper = mappingConfig.CreateMapper();

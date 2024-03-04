@@ -1,10 +1,11 @@
 ﻿namespace Lab_Domain.Enums
 {
-    public enum EnumTipoEquipamento
+    public enum EnumTipoEquipamento : int
     {
-        Outro = 0,
+        None = 0,
         Desktop = 1,
         Notebook = 2,
         Monitor = 3,
+        Outro = 4,
     }
 }

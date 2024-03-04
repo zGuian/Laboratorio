@@ -9,18 +9,7 @@ namespace Lab_Domain.Entities
         public string? SerialNumber { get; set; }
         public string? Inventario { get; set; }
         public bool Cadeado { get; set; }
-
-        public Equipamento()
-        {
-        }
-
-        public Equipamento(int id, EnumTipoEquipamento enumTipo, string serialNumber, string inventario, bool cadeado)
-        {
-            Id = id;
-            TipoEquipamento = enumTipo;
-            SerialNumber = serialNumber;
-            Inventario = inventario;
-            Cadeado = cadeado;
-        }
+        public int RegistroId { get; set; }
+        public virtual IEnumerable<Registro>? Registros { get; set; }
     }
 }
