@@ -58,7 +58,7 @@
             // 
             adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
             adicionarToolStripMenuItem.Size = new Size(180, 22);
-            adicionarToolStripMenuItem.Text = "Adicionar";
+            adicionarToolStripMenuItem.Text = "AdicionarAsync";
             // 
             // removerToolStripMenuItem
             // 

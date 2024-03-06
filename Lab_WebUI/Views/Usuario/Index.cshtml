@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Lab_WebUI.Models.UsuariosModels.UsuarioModel>
+
+@{
+    ViewBag.Title = "Lista de usuário";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">@ViewBag.Title</h2>
+
+    <ul class="list-group">
+        @foreach (var usuarioModel in Model)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                @Html.DisplayNameFor(model => model.Chave)
+                <a asp-action="Editar" class="btn btn-outline-primaty btn-sm" asp-route-id="@usuarioModel.Id">Editar</a>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,49 @@
+﻿@model Lab_WebUI.Models.UsuariosModels.CadastraUsuarioModel
+
+@{
+    ViewBag.Title = "Cadastro de usuario";
+}
+
+<div class="cadastro-container">
+    <h2 class="text-center mb-4">@ViewBag.Title</h2>
+
+    <form asp-controller="Usuario" asp-action="Criar" method="post">
+        <div class="mb-3">
+            <label asp-for="Nome" class="form-label"></label>
+            <input asp-for="Nome" class="form-control"  required/>
+            <span asp-validation-for="Nome" class="text-danger" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Chave" class="form-label"></label>
+            <input asp-for="Chave" class="form-control" required>
+            <span asp-validation-for="Chave" class="text-danger" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Perfil" class="form-label"></label>
+            <div>
+                <label>
+                    <input type="radio" asp-for="Perfil" value="2" /> Admin
+                </label>
+                <label>
+                    <input type="radio" asp-for="Perfil" value="3" /> Tecnico
+                </label>
+                <label>
+                    <input type="radio" asp-for="Perfil" value="4" /> Padrao
+                </label>
+                <label>
+                    <input type="radio" asp-for="Perfil" value="5" /> Visualizar
+                </label>
+            </div>
+            <span asp-validation-for="Perfil" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Senha" class="form-label"></label>
+            <input asp-for="Senha" type="password" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>

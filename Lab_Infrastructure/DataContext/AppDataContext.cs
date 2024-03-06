@@ -11,6 +11,7 @@ namespace Lab_Infrastructure.DataContext
         }
 
         public DbSet<Laboratorio> Laboratorios { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         //public DbSet<Tecnico> Tecnicos { get; set; }
         //public DbSet<Equipamento> Equipamentos { get; set; }
         //public DbSet<Registro> Registros { get; set; }
