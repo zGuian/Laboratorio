@@ -9,5 +9,17 @@ namespace Lab_Domain.Entities
         public string Chave { get; set; }
         public EnumPerfil Perfil { get; set; }
         public string Senha { get; set; }
+
+        public bool ValidaSenha(string senha)
+        {
+            if (Senha == senha)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

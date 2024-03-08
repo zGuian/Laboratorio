@@ -15,7 +15,7 @@ namespace Lab_Application.Helper
         }
         public Usuario BuscarSessaoUsuario()
         {
-            var sessaoUsuario = _httpContext.HttpContext.Session.GetString("sessaousuariologado");
+            var sessaoUsuario = _httpContext.HttpContext.Session.GetString("sessaoUsuariologado");
             if (sessaoUsuario == null || sessaoUsuario == string.Empty)
             {
                 return null;
@@ -29,12 +29,12 @@ namespace Lab_Application.Helper
         public void CriarSessaoUsuario(Usuario usuario)
         {
             var objString = JsonConvert.SerializeObject(usuario);
-            _httpContext.HttpContext.Session.SetString("sessaousuariologado", objString);
+            _httpContext.HttpContext.Session.SetString("sessaoUsuariologado", objString);
         }
 
         public void RemoverSessaoUsuario()
         {
-            _httpContext.HttpContext.Session.Remove("sessaousuariologado");
+            _httpContext.HttpContext.Session.Remove("sessaoUsuariologado");
         }
 
     }

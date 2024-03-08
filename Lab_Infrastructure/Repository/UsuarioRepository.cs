@@ -19,7 +19,7 @@ namespace Lab_Infrastructure.Repository
 
         public async Task<Usuario> BuscarAsync(string login)
         {
-            var userData = await _context.Usuarios.FirstOrDefaultAsync(x => x.Chave == login);
+            var userData = await _context.Usuarios.FirstOrDefaultAsync(x => x.Chave.ToUpper() == login.ToUpper());
             if (userData != null)
             {
                 return userData;
