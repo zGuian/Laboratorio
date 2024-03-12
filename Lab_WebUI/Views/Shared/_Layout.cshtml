@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                @await Component.InvokeAsync("Menu")
+                @Component.InvokeAsync("Menu")
             </div>
         </nav>
     </header>
@@ -24,7 +24,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - Lab_WebUI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Lab_WebUI - <a asp-area="" asp-controller="Login" asp-action="Index">Login</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

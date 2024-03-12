@@ -1,4 +1,4 @@
-﻿using Lab_Domain.Entities;
+﻿using Lab_WebUI.Models.UsuariosModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -11,11 +11,11 @@ namespace Lab_WebUI.ViewComponents
             var sUsuario = HttpContext.Session.GetString("sessaoUsuarioLogado");
             if (string.IsNullOrEmpty(sUsuario))
             {
-                return null!;
+                return null;
             }
             else
             {
-                var usuario = JsonConvert.DeserializeObject<Usuario>(sUsuario);
+                var usuario = JsonConvert.DeserializeObject<UsuarioModel>(sUsuario);
                 return View(usuario);
             }
         }

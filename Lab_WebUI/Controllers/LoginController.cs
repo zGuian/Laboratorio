@@ -1,7 +1,6 @@
 ﻿using Lab_Application.Interfaces;
 using Lab_WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Policy;
 
 namespace Lab_WebUI.Controllers
 {
@@ -16,10 +15,10 @@ namespace Lab_WebUI.Controllers
             _sessao = sessao;
         }
 
-        [Route("Index")]
         public IActionResult Index()
         {
-            if(_sessao.BuscarSessaoUsuario() != null)
+            var sUsuario = _sessao.BuscarSessaoUsuario();
+            if (sUsuario != null)
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -30,7 +29,6 @@ namespace Lab_WebUI.Controllers
         }
 
         [HttpPost]
-        [Route("entrar")]
         public async Task<IActionResult> Entrar(LoginModel loginModel)
         {
             try
@@ -40,7 +38,8 @@ namespace Lab_WebUI.Controllers
                     var usuario = await _services.Buscar(loginModel.Login);
                     if (usuario != null)
                     {
-                        if (usuario.ValidaSenha(loginModel.Senha))
+                        var uValidado = usuario.ValidaSenha(loginModel.Senha);
+                        if (uValidado)
                         {
                             _sessao.CriarSessaoUsuario(usuario);
                             return RedirectToAction("Index", "Home");
