@@ -14,7 +14,8 @@
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
         </li>
-        @if (Model.Perfil == Lab_Domain.Enums.EnumPerfil.Admin) {
+        @if (Model.Perfil != EnumPerfil.Padrao || Model.Perfil != EnumPerfil.Visualizar)
+        {
             <li class="nav-item">
                 <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuarios</a>
             </li>

@@ -24,7 +24,7 @@ namespace Lab_Application.Filters
                 {
                     context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Login" }, { "action", "Index" } });
                 }
-                if (usuario.Perfil != EnumPerfil.Admin || usuario.Perfil != EnumPerfil.AdminSistema || usuario.Perfil != EnumPerfil.Tecnico)
+                if (usuario.Perfil == EnumPerfil.Padrao || usuario.Perfil == EnumPerfil.Visualizar)
                 {
                     context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Restrito" }, { "action", "Index" } });
                 }

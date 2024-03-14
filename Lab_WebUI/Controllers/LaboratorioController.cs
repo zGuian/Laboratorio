@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Lab_Application.DTOs;
+using Lab_Application.Filters;
 using Lab_Application.Interfaces;
 using Lab_Domain.Enums;
 using Lab_WebUI.Models.LaboratorioModels;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Lab_WebUI.Controllers
 {
     [Route("laboratorio")]
+    [PagUsuarioLogado]
     public class LaboratorioController : Controller
     {
         private readonly ILaboratorioServices _services;

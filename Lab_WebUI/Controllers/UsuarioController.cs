@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Lab_WebUI.Controllers
 {
     [Route("usuario")]
-    [PagUsuarioLogado]
+    [PagSomenteAdmin]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioServices _services;
