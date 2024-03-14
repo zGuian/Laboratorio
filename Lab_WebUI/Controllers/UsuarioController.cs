@@ -1,4 +1,5 @@
-﻿using Lab_Application.Interfaces;
+﻿using Lab_Application.Filters;
+using Lab_Application.Interfaces;
 using Lab_Domain.Entities;
 using Lab_WebUI.Models.UsuariosModels;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Lab_WebUI.Controllers
 {
     [Route("usuario")]
+    [PagUsuarioLogado]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioServices _services;

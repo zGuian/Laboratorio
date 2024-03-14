@@ -1,9 +1,11 @@
+using Lab_Application.Filters;
 using Lab_WebUI.Models.ErrorModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Lab_WebUI.Controllers
 {
+    [PagUsuarioLogado]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
