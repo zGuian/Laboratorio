@@ -31,7 +31,6 @@ namespace Lab_Infrastructure.ConfigurationDataBase
 
             builder.Property(x => x.Senha)
                 .HasColumnName("CL_Senha")
-                .HasMaxLength(50)
                 .IsRequired();
         }
     }

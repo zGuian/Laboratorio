@@ -1,4 +1,5 @@
-﻿using Lab_Application.Filters;
+﻿using Lab_Application.DTOs;
+using Lab_Application.Filters;
 using Lab_Application.Interfaces;
 using Lab_Domain.Entities;
 using Lab_WebUI.Models.UsuariosModels;
@@ -41,7 +42,7 @@ namespace Lab_WebUI.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("cadastro")]
-        public async Task<IActionResult> Criar(Usuario usuario)
+        public async Task<IActionResult> Criar(UsuarioDTO uDTO)
         {
             if (!ModelState.IsValid)
             {
@@ -50,11 +51,12 @@ namespace Lab_WebUI.Controllers
             }
             else
             {
-                await _services.Adicionar(usuario);
+                await _services.Adicionar(uDTO);
                 return RedirectToAction(nameof(Index));
             }   
         }
 
+        [ValidateAntiForgeryToken]
         [Route("editar")]
         public async Task<IActionResult> Editar(int id)
         {
@@ -73,16 +75,16 @@ namespace Lab_WebUI.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("editar")]
-        public async Task<IActionResult> Editar(int id, Usuario usuario)
+        public IActionResult Editar(int id, Usuario usuario)
         {
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("mensagem", "Algo deu errado");
+                ModelState.AddModelError("Mensagem", "Algo deu errado");
                 return View();
             }
             else
             {
-                await _services.Atualizar(id, usuario);
+                _services.Atualizar(id, usuario);
                 return RedirectToAction(nameof(Index));
             }
         }

@@ -28,8 +28,8 @@ namespace Lab_Application.Helper
 
         public void CriarSessaoUsuario(Usuario usuario)
         {
-            var objString = JsonConvert.SerializeObject(usuario);
-            _httpContext.HttpContext.Session.SetString("sessaoUsuarioLogado", objString);
+            var uString = JsonConvert.SerializeObject(usuario);
+            _httpContext.HttpContext.Session.SetString("sessaoUsuarioLogado", uString);
         }
 
         public void RemoverSessaoUsuario()

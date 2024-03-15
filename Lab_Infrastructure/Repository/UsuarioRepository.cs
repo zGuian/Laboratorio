@@ -1,4 +1,5 @@
 ﻿using Lab_Application.Interfaces;
+using Lab_Application.Services;
 using Lab_Domain.Entities;
 using Lab_Infrastructure.DataContext;
 using Microsoft.EntityFrameworkCore;
@@ -48,25 +49,38 @@ namespace Lab_Infrastructure.Repository
             }
         }
 
-        public async Task<Usuario> AdicionarAsync(Usuario usuario)
+        public async Task<bool> AdicionarAsync(Usuario usuario)
         {
-            await _context.Usuarios.AddAsync(usuario);
-            await _context.SaveChangesAsync();
-            return usuario;
+            try
+            {
+                SecurityServices.ConverteSenhaEmHash(usuario);
+                await _context.Usuarios.AddAsync(usuario);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                new Exception($"Ocorreu um erro ao adicionar {usuario.Nome} na base de dados\nErro:{ex.Message}");
+                return false;
+            }
         }
 
-        public async Task<Usuario> AtualizarAsync(int id, Usuario usuario)
+        public async void Atualizar(int id, Usuario usuario)
         {
-            var usuarioId = await _context.Usuarios.FirstOrDefaultAsync(x => x.Id.Equals(id));
-            if (usuarioId != null)
+            try
             {
-                _context.Update(usuarioId).CurrentValues.SetValues(usuario);
-                await _context.SaveChangesAsync();
-                return usuarioId;
+                var usuarioId = await _context.Usuarios.FirstOrDefaultAsync(x => x.Id.Equals(id));
+                if (usuarioId != null)
+                {
+                    _context.Update(usuarioId).CurrentValues.SetValues(usuario);
+                    SecurityServices.ConverteSenhaEmHash(usuario);
+                    await _context.SaveChangesAsync();
+                }
             }
-            else
+            catch (Exception)
             {
-                throw new Exception();
+                //Esta exceção está sendo ignorada propositalmente no dia 14/03/2024. 
+                //Fazer tratamento de erro.
             }
         }
 

@@ -7,8 +7,8 @@ namespace Lab_Application.Interfaces
         public Task<Usuario> BuscarAsync(string login);
         public Task<IEnumerable<Usuario>> BuscarAsync();
         public Task<Usuario> BuscarAsync(int id);
-        public Task<Usuario> AdicionarAsync(Usuario usuario);
-        public Task<Usuario> AtualizarAsync(int id, Usuario usuario);
+        public Task<bool> AdicionarAsync(Usuario usuario);
+        public void Atualizar(int id, Usuario usuario);
         public void Apagar(int id);
     }
 }

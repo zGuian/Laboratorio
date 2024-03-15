@@ -1,4 +1,5 @@
 ﻿using Lab_Application.Interfaces;
+using Lab_Application.Services;
 using Lab_WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,8 +39,8 @@ namespace Lab_WebUI.Controllers
                     var usuario = await _services.Buscar(loginModel.Login);
                     if (usuario != null)
                     {
-                        var uValidado = usuario.ValidaSenha(loginModel.Senha);
-                        if (uValidado)
+                        var uValidado = await _services.ValidaUsuario(usuario);
+                        if (uValidado == true)
                         {
                             _sessao.CriarSessaoUsuario(usuario);
                             return RedirectToAction("Index", "Home");
