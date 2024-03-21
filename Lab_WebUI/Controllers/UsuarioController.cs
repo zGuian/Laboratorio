@@ -36,7 +36,8 @@ namespace Lab_WebUI.Controllers
         [Route("cadastro")]
         public IActionResult Criar()
         {
-            return View();
+            var model = new CadastraUsuarioModel();
+            return View(model);
         }
 
         [HttpPost]
@@ -51,17 +52,21 @@ namespace Lab_WebUI.Controllers
             }
             else
             {
-                await _services.Adicionar(uDTO);
-                return RedirectToAction(nameof(Index));
-            }   
+                bool resp = await _services.Adicionar(uDTO);
+                if (resp != false)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                TempData["MensagemErro"] = $"Ops! Ocorreu um problema ao criar usuário.";
+                return View();
+            }
         }
 
-        [ValidateAntiForgeryToken]
-        [Route("editar")]
+        [Route("editar/{id:int}")]
         public async Task<IActionResult> Editar(int id)
         {
             var uDTO = await _services.Buscar(id);
-            var model = new UsuarioModel
+            var model = new AtualizaUsuarioModel
             {
                 Id = uDTO.Id,
                 Nome = uDTO.Nome,
@@ -74,8 +79,8 @@ namespace Lab_WebUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("editar")]
-        public IActionResult Editar(int id, Usuario usuario)
+        [Route("editar/{id:int}")]
+        public async Task<IActionResult> Editar(int id, Usuario usuario)
         {
             if (!ModelState.IsValid)
             {
@@ -84,7 +89,7 @@ namespace Lab_WebUI.Controllers
             }
             else
             {
-                _services.Atualizar(id, usuario);
+                await _services.Atualizar(id, usuario);
                 return RedirectToAction(nameof(Index));
             }
         }

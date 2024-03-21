@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Lab_WebUI.Models
+namespace Lab_WebUI.Models.LoginModels
 {
     public class LoginModel
     {
@@ -9,6 +9,5 @@ namespace Lab_WebUI.Models
 
         [Required(ErrorMessage = "Digite a senha")]
         public string Senha { get; set; }
-
     }
 }

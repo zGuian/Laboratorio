@@ -33,21 +33,27 @@ namespace Lab_Application.Services
             return _mapper.Map<UsuarioDTO>(await _repository.BuscarAsync(id));
         }
 
-        public async Task<Usuario> Adicionar(UsuarioDTO uDTO)
+        public async Task<bool> Adicionar(UsuarioDTO uDTO)
         {
-            var usuario = _mapper.Map<Usuario>(uDTO);
-            SecurityServices.ConverteSenhaEmHash(usuario);
-            bool uResposta = await _repository.AdicionarAsync(usuario);
-            if (uResposta != false)
+            var verificaChave = await _repository.BuscarAsync(uDTO.Chave);
+            if (verificaChave == null)
             {
-                return usuario;
+                var usuario = _mapper.Map<Usuario>(uDTO);
+                SecurityServices.ConverteSenhaEmHash(usuario);
+                bool uResposta = await _repository.AdicionarAsync(usuario);
+                if (uResposta != false)
+                {
+                    return true;
+                }
+                return false;
             }
-            throw new Exception();
+            return false;
         }
 
-        public void Atualizar(int id, Usuario usuario)
+        public async Task<Task> Atualizar(int id, Usuario usuario)
         {
-            _repository.Atualizar(id, usuario);
+            await _repository.Atualizar(id, usuario);
+            return Task.CompletedTask;
         }
 
         public async Task<bool> ValidaUsuario(Usuario usuario)

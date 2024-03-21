@@ -4,7 +4,15 @@
     ViewBag.Title = "Cadastro de usuario";
 }
 
-<div class="cadastro-container">
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<div class="container mt-5">
     <h2 class="text-center mb-4">@ViewBag.Title</h2>
 
     <form asp-controller="Usuario" asp-action="Criar" method="post">

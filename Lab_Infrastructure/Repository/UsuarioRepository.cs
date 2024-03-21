@@ -20,14 +20,14 @@ namespace Lab_Infrastructure.Repository
 
         public async Task<Usuario> BuscarAsync(string login)
         {
-            var userData = await _context.Usuarios.FirstOrDefaultAsync(x => x.Chave.ToUpper() == login.ToUpper());
-            if (userData != null)
+            var uData = await _context.Usuarios.FirstOrDefaultAsync(x => x.Chave.ToUpper() == login.ToUpper());
+            if (uData != null)
             {
-                return userData;
+                return uData;
             }
             else
             {
-                throw new Exception();
+                return null;
             }
         }
 
@@ -65,7 +65,7 @@ namespace Lab_Infrastructure.Repository
             }
         }
 
-        public async void Atualizar(int id, Usuario usuario)
+        public async Task Atualizar(int id, Usuario usuario)
         {
             try
             {
@@ -84,7 +84,7 @@ namespace Lab_Infrastructure.Repository
             }
         }
 
-        public void Apagar(int id)
+        public Task Apagar(int id)
         {
             throw new NotImplementedException();
         }

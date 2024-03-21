@@ -1,4 +1,4 @@
-﻿@model Lab_WebUI.Models.LoginModels.LoginModel
+﻿@model Lab_WebUI.Models.LoginModels.PrimeiroLoginModel
 
 @{
     Layout = "_Layout_Deslogado";
@@ -15,12 +15,15 @@
 
 <div class="login-container">
     <h2 class="text-center mb-4">Login</h2>
-
-    <form asp-controller="Login" asp-action="Entrar" method="post">
+    <div class="alert alert-danger">
+        @Html.ValidationMessage("Mensagem")
+    </div>
+    <form asp-controller="Login" asp-action="PrimeiroLogin" method="post">
+        @Html.ValidationSummary(true)
         <div class="mb-3">
             <label asp-for="Login" class="form-label"></label>
             <input asp-for="Login" class="form-control" required />
-            <span asp-validation-for="Login" class="text-danger"/>
+            <span asp-validation-for="Login" class="text-danger" />
         </div>
 
         <div class="mb-3">
@@ -30,6 +33,5 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Entrar</button>
-        <a asp-action="PrimeiroLogin" asp-controller="Login" class="btn btn-secundary">Primeiro Login</a>
     </form>
 </div>
