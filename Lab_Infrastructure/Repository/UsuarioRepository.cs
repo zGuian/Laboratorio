@@ -53,7 +53,7 @@ namespace Lab_Infrastructure.Repository
         {
             try
             {
-                SecurityServices.ConverteSenhaEmHash(usuario);
+                GeraHashSenhaUser.ConverteSenhaEmHash(usuario);
                 await _context.Usuarios.AddAsync(usuario);
                 await _context.SaveChangesAsync();
                 return true;
@@ -73,7 +73,7 @@ namespace Lab_Infrastructure.Repository
                 if (usuarioId != null)
                 {
                     _context.Update(usuarioId).CurrentValues.SetValues(usuario);
-                    SecurityServices.ConverteSenhaEmHash(usuario);
+                    GeraHashSenhaUser.ConverteSenhaEmHash(usuario);
                     await _context.SaveChangesAsync();
                 }
             }

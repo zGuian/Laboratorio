@@ -39,7 +39,7 @@ namespace Lab_Application.Services
             if (verificaChave == null)
             {
                 var usuario = _mapper.Map<Usuario>(uDTO);
-                SecurityServices.ConverteSenhaEmHash(usuario);
+                GeraHashSenhaUser.ConverteSenhaEmHash(usuario);
                 bool uResposta = await _repository.AdicionarAsync(usuario);
                 if (uResposta != false)
                 {
@@ -63,7 +63,7 @@ namespace Lab_Application.Services
             {
                 return false;
             }
-            var verifica = SecurityServices.ValidaAtualizaHashAsync(usuario, usuario.Senha);
+            var verifica = GeraHashSenhaUser.ValidaAtualizaHashAsync(usuario, usuario.Senha);
             if (verifica != false)
             {
                 throw new NotImplementedException();

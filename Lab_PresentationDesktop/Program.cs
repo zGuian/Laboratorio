@@ -1,3 +1,5 @@
+using Lab_Application.Interfaces;
+using Lab_Application.Services;
 using Lab_PresentationDesktop.FormularioViews;
 
 namespace Lab_PresentationDesktop
@@ -10,8 +12,6 @@ namespace Lab_PresentationDesktop
         [STAThread]
         private static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Frm_Principal());
         }

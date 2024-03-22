@@ -1,12 +1,10 @@
 ﻿using Lab_Application.Interfaces;
 using Lab_Domain.Entities;
 using Microsoft.AspNetCore.Identity;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace Lab_Application.Services
 {
-    public static class SecurityServices
+    public static class GeraHashSenhaUser
     {
         private static readonly IUsuarioServices _service;
 
@@ -32,23 +30,6 @@ namespace Lab_Application.Services
                 default:
                     throw new InvalidOperationException();
             }
-        }
-
-        public static string GeraHash(this string valor)
-        {
-            var hash = SHA512.Create();
-            var encoding = new ASCIIEncoding();
-            var array = encoding.GetBytes(valor);
-
-            array = hash.ComputeHash(array);
-
-            var stringHexa = new StringBuilder();
-
-            foreach (var item in array)
-            {
-                stringHexa.Append(item.ToString("x2"));
-            }
-            return stringHexa.ToString();
         }
     }
 }
