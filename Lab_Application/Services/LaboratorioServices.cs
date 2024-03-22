@@ -5,7 +5,7 @@ using Lab_Domain.Entities;
 
 namespace Lab_Application.Services
 {
-    internal class LaboratorioServices : ILaboratorioServices
+    public class LaboratorioServices : ILaboratorioServices
     {
         private readonly ILaboratorioRepository _repository;
         private readonly IMapper _mapper;

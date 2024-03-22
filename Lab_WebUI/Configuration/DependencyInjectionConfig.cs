@@ -13,10 +13,16 @@ namespace Lab_WebUI.Configuration
             services.AddSingleton<ISqlDataAcess, SqlDataAcess>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+            services.AddScoped<ISessaoHelper, SessaoHelper>();
+
             services.AddScoped<ITecnicoRepository, TecnicoRepository>();
             services.AddScoped<ITecnicoServices, TecnicoServices>();
+
             services.AddScoped<ILaboratorioRepository, LaboratorioRepository>();
-            services.AddScoped<ISessaoHelper, SessaoHelper>();
+            services.AddScoped<ILaboratorioServices, LaboratorioServices>();
+
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IUsuarioServices, UsuarioServices>();
 
             services.AddSession(o =>
             {

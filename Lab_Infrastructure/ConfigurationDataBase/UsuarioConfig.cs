@@ -1,4 +1,5 @@
 ﻿using Lab_Domain.Entities;
+using Lab_Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -21,9 +22,15 @@ namespace Lab_Infrastructure.ConfigurationDataBase
                 .HasMaxLength(8)
                 .IsRequired();
 
+            builder.Property(x => x.Perfil)
+                .HasColumnName("CL_Perfil")
+                .HasMaxLength(25)
+                .HasConversion(x => x.ToString(),
+                x => (EnumPerfil)Enum.Parse(typeof(EnumPerfil), x))
+                .IsRequired();
+
             builder.Property(x => x.Senha)
                 .HasColumnName("CL_Senha")
-                .HasMaxLength(50)
                 .IsRequired();
         }
     }

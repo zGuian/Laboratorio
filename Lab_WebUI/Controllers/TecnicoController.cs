@@ -1,4 +1,5 @@
 ﻿using Lab_Application.DTOs;
+using Lab_Application.Filters;
 using Lab_Application.Interfaces;
 using Lab_WebUI.Models.ErrorModels;
 using Lab_WebUI.Models.TecnicoModels;
@@ -8,6 +9,7 @@ using System.Diagnostics;
 namespace Lab_WebUI.Controllers
 {
     [Route("Tecnicos")]
+    [PagUsuarioLogado]
     public class TecnicoController : Controller
     {
         private readonly ITecnicoServices _services;

@@ -22,34 +22,6 @@ namespace Lab_Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Lab_Domain.Entities.Equipamento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("Cadeado")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Inventario")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RegistroId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SerialNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TipoEquipamento")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Equipamentos");
-                });
-
             modelBuilder.Entity("Lab_Domain.Entities.Laboratorio", b =>
                 {
                     b.Property<int>("Id")
@@ -114,7 +86,7 @@ namespace Lab_Infrastructure.Migrations
                     b.ToTable("TB_Laboratorio", "dbo");
                 });
 
-            modelBuilder.Entity("Lab_Domain.Entities.Registro", b =>
+            modelBuilder.Entity("Lab_Domain.Entities.Usuario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -122,76 +94,32 @@ namespace Lab_Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime?>("Entrada")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("EquipamentoId")
-                        .HasColumnType("int");
+                    b.Property<string>("Chave")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)")
+                        .HasColumnName("CL_Chave");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("CL_Nome");
 
-                    b.Property<string>("Observacao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Saida")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EquipamentoId");
-
-                    b.ToTable("Registros");
-                });
-
-            modelBuilder.Entity("Lab_Domain.Entities.Tecnico", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("EquipamentoId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
+                    b.Property<string>("Perfil")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)")
+                        .HasColumnName("CL_Perfil");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("CL_Senha");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EquipamentoId");
-
-                    b.ToTable("Tecnicos");
-                });
-
-            modelBuilder.Entity("Lab_Domain.Entities.Registro", b =>
-                {
-                    b.HasOne("Lab_Domain.Entities.Equipamento", "Equipamento")
-                        .WithMany("Registros")
-                        .HasForeignKey("EquipamentoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Equipamento");
-                });
-
-            modelBuilder.Entity("Lab_Domain.Entities.Tecnico", b =>
-                {
-                    b.HasOne("Lab_Domain.Entities.Equipamento", "Equipamento")
-                        .WithMany()
-                        .HasForeignKey("EquipamentoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Equipamento");
-                });
-
-            modelBuilder.Entity("Lab_Domain.Entities.Equipamento", b =>
-                {
-                    b.Navigation("Registros");
+                    b.ToTable("TB_Usuarios", "dbo");
                 });
 #pragma warning restore 612, 618
         }

@@ -11,6 +11,7 @@ namespace Lab_WebUI.Configuration
             {
                 mc.AddProfile(new TecnicoProfile());
                 mc.AddProfile(new LaboratorioProfile());
+                mc.AddProfile(new UsuarioProfile());
             });
 
             var mapper = mappingConfig.CreateMapper();

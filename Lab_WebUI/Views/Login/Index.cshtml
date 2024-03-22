@@ -1,0 +1,35 @@
+﻿@model Lab_WebUI.Models.LoginModels.LoginModel
+
+@{
+    Layout = "_Layout_Deslogado";
+    ViewBag.Title = "Login";
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<div class="login-container">
+    <h2 class="text-center mb-4">Login</h2>
+
+    <form asp-controller="Login" asp-action="Entrar" method="post">
+        <div class="mb-3">
+            <label asp-for="Login" class="form-label"></label>
+            <input asp-for="Login" class="form-control" required />
+            <span asp-validation-for="Login" class="text-danger"/>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Senha" class="form-label"></label>
+            <input asp-for="Senha" type="password" class="form-control" required />
+            <span asp-validation-for="Senha" class="text-danger" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Entrar</button>
+        <a asp-action="PrimeiroLogin" asp-controller="Login" class="btn btn-secundary">Primeiro Login</a>
+    </form>
+</div>
