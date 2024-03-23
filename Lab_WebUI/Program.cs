@@ -19,4 +19,3 @@ app.UseAuthorization();
 app.UseSession();
 app.RouteMapConfiguration();
 app.Run();
-Console.WriteLine("Aplicação OK");
