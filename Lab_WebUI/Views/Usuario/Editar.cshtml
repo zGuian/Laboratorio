@@ -20,7 +20,7 @@
             <span asp-validation-for="Chave" class="text-danger" />
         </div>
 
-        @if (Model.Perfil != EnumPerfil.Padrao || Model.Perfil != EnumPerfil.Visualizar || Model.Perfil != EnumPerfil.Tecnico)
+        @if (Model.Perfil != PerfilEnum.Padrao || Model.Perfil != PerfilEnum.Visualizar || Model.Perfil != PerfilEnum.Tecnico)
         {
             <div class="mb-3">
                 <label asp-for="Perfil" class="form-label"></label>

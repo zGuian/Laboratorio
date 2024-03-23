@@ -1,6 +1,4 @@
-﻿using Lab_Application.Interfaces;
-
-namespace Lab_PresentationDesktop.Views
+﻿namespace Lab_PresentationDesktop.Views
 {
     public partial class Frm_Tecnico : Form
     {

@@ -26,7 +26,7 @@ namespace Lab_Infrastructure.ConfigurationDataBase
                 .HasColumnName("CL_Perfil")
                 .HasMaxLength(25)
                 .HasConversion(x => x.ToString(),
-                x => (EnumPerfil)Enum.Parse(typeof(EnumPerfil), x))
+                x => (PerfilEnum)Enum.Parse(typeof(PerfilEnum), x))
                 .IsRequired();
 
             builder.Property(x => x.Senha)

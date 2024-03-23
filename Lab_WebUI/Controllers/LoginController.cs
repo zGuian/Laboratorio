@@ -34,6 +34,7 @@ namespace Lab_WebUI.Controllers
         {
             try
             {
+                Console.WriteLine("Fazendo validação de usuario.");
                 if (ModelState.IsValid)
                 {
                     var usuario = await _services.Buscar(loginModel.Login);

@@ -12,6 +12,11 @@ namespace Lab_PresentationDesktop.FormularioViews
         private readonly IMapper _mapper;
         private readonly IUsuarioServices _usuarioServices;
 
+        public Frm_Principal()
+        {
+            InitializeComponent();
+        }
+
         public Frm_Principal(IUsuarioRepository usuarioRepository, IMapper mapper)
         {
             _usuarioRepository = usuarioRepository;
@@ -41,7 +46,7 @@ namespace Lab_PresentationDesktop.FormularioViews
         private void CadastraNovoStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void FechaForm_FormClosing(object sender, FormClosingEventArgs e)

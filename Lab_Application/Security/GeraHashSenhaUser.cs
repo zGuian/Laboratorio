@@ -6,7 +6,7 @@ namespace Lab_Application.Services
 {
     public static class GeraHashSenhaUser
     {
-        private static readonly IUsuarioServices _service;
+        private readonly static IUsuarioServices _service;
 
         public static void ConverteSenhaEmHash(Usuario usuario)
         {

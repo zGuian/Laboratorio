@@ -36,6 +36,5 @@ namespace Lab_Application.Helper
         {
             _httpContext.HttpContext.Session.Remove("sessaoUsuarioLogado");
         }
-
     }
 }

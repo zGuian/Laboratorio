@@ -1,6 +1,6 @@
 ﻿namespace Lab_Domain.Enums
 {
-    public enum EnumPerfil
+    public enum PerfilEnum
     {
         AdminSistema = 1,
         Admin = 2,
