@@ -1,6 +1,6 @@
-﻿using Lab_Application.Interfaces;
+﻿using EFTS_Application.Interfaces;
 
-namespace Lab_Application.Services
+namespace EFTS_Application.Services
 {
     internal class UsuarioValidatorService : IUsuarioValidatorService
     {

@@ -1,11 +1,11 @@
-﻿using Lab_Domain.Entities;
+﻿using EFTS_Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json;
 
-namespace Lab_Application.Filters
+namespace EFTS_Application.Filters
 {
     public class PagUsuarioLogado : ActionFilterAttribute
     {

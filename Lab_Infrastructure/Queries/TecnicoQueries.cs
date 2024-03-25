@@ -1,4 +1,4 @@
-﻿using Lab_Domain.Entities;
+﻿using EFTS_Domain.Entities;
 using Lab_Infrastructure.MappingData;
 
 namespace Lab_Infrastructure.Queries

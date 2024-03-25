@@ -1,7 +1,7 @@
-﻿using Lab_Application.Validators;
+﻿using EFTS_Application.Validators;
 using System.ComponentModel.DataAnnotations;
 
-namespace Lab_WebUI.Models.LoginModels
+namespace EFTS_WebUI.Models.LoginModels
 {
     public class PrimeiroLoginModel
     {

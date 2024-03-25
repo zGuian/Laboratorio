@@ -1,4 +1,4 @@
-﻿namespace Lab_Application.Interfaces
+﻿namespace EFTS_Application.Interfaces
 {
     public interface IUsuarioValidatorService
     {

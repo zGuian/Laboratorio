@@ -1,6 +1,6 @@
-﻿using Lab_Domain.Enums;
+﻿using EFTS_Domain.Enums;
 
-namespace Lab_Domain.Entities
+namespace EFTS_Domain.Entities
 {
     public class Laboratorio
     {

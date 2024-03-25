@@ -25,7 +25,7 @@ namespace Lab_Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Lab_Domain.Entities.Equipamento", b =>
+            modelBuilder.Entity("EFTS_Domain.Entities.Equipamento", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace Lab_Infrastructure.Migrations
                     b.ToTable("Equipamentos");
                 });
 
-            modelBuilder.Entity("Lab_Domain.Entities.Laboratorio", b =>
+            modelBuilder.Entity("EFTS_Domain.Entities.Laboratorio", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -117,7 +117,7 @@ namespace Lab_Infrastructure.Migrations
                     b.ToTable("TB_Laboratorio", "dbo");
                 });
 
-            modelBuilder.Entity("Lab_Domain.Entities.Registro", b =>
+            modelBuilder.Entity("EFTS_Domain.Entities.Registro", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -148,7 +148,7 @@ namespace Lab_Infrastructure.Migrations
                     b.ToTable("Registros");
                 });
 
-            modelBuilder.Entity("Lab_Domain.Entities.Tecnico", b =>
+            modelBuilder.Entity("EFTS_Domain.Entities.Tecnico", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -170,9 +170,9 @@ namespace Lab_Infrastructure.Migrations
                     b.ToTable("Tecnicos");
                 });
 
-            modelBuilder.Entity("Lab_Domain.Entities.Registro", b =>
+            modelBuilder.Entity("EFTS_Domain.Entities.Registro", b =>
                 {
-                    b.HasOne("Lab_Domain.Entities.Equipamento", "Equipamento")
+                    b.HasOne("EFTS_Domain.Entities.Equipamento", "Equipamento")
                         .WithMany("Registros")
                         .HasForeignKey("EquipamentoId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -181,9 +181,9 @@ namespace Lab_Infrastructure.Migrations
                     b.Navigation("Equipamento");
                 });
 
-            modelBuilder.Entity("Lab_Domain.Entities.Tecnico", b =>
+            modelBuilder.Entity("EFTS_Domain.Entities.Tecnico", b =>
                 {
-                    b.HasOne("Lab_Domain.Entities.Equipamento", "Equipamento")
+                    b.HasOne("EFTS_Domain.Entities.Equipamento", "Equipamento")
                         .WithMany()
                         .HasForeignKey("EquipamentoId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -192,7 +192,7 @@ namespace Lab_Infrastructure.Migrations
                     b.Navigation("Equipamento");
                 });
 
-            modelBuilder.Entity("Lab_Domain.Entities.Equipamento", b =>
+            modelBuilder.Entity("EFTS_Domain.Entities.Equipamento", b =>
                 {
                     b.Navigation("Registros");
                 });

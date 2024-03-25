@@ -1,4 +1,4 @@
-﻿using Lab_Domain.Entities;
+﻿using EFTS_Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

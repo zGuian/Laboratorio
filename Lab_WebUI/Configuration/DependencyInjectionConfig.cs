@@ -1,10 +1,10 @@
-﻿using Lab_Application.Helper;
-using Lab_Application.Interfaces;
-using Lab_Application.Services;
+﻿using EFTS_Application.Helper;
+using EFTS_Application.Interfaces;
+using EFTS_Application.Services;
 using Lab_Infrastructure.Factory;
 using Lab_Infrastructure.Repository;
 
-namespace Lab_WebUI.Configuration
+namespace EFTS_WebUI.Configuration
 {
     public static class DependencyInjectionConfig
     {

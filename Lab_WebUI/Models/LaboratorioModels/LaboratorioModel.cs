@@ -1,7 +1,7 @@
-﻿using Lab_Domain.Enums;
+﻿using EFTS_Domain.Enums;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Lab_WebUI.Models.LaboratorioModels
+namespace EFTS_WebUI.Models.LaboratorioModels
 {
     public class LaboratorioModel
     {
@@ -15,7 +15,7 @@ namespace Lab_WebUI.Models.LaboratorioModels
         public DateTime? Saida { get; set; }
         public EnumArmario? Armario { get; set; }
         public string? Observacao { get; set; }
-        public required SelectList TipoEquipOptions { get; set; }
-        public required SelectList ArmarioOptions { get; set; }
+        public SelectList TipoEquipOptions { get; set; }
+        public SelectList ArmarioOptions { get; set; }
     }
 }

@@ -1,11 +1,13 @@
-﻿using Lab_Domain.Entities;
+﻿using EFTS_Domain.Entities;
 
-namespace Lab_Application.Interfaces
+namespace EFTS_Application.Interfaces
 {
     public interface ISessaoHelper
     {
         void CriarSessaoUsuario(Usuario usuario);
+
         void RemoverSessaoUsuario();
+
         Usuario BuscarSessaoUsuario();
     }
 }

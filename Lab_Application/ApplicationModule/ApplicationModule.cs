@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Lab_Application.Helper;
-using Lab_Application.Interfaces;
-using Lab_Application.Profiles;
-using Lab_Application.Services;
+using EFTS_Application.Helper;
+using EFTS_Application.Interfaces;
+using EFTS_Application.Profiles;
+using EFTS_Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Lab_Application.ApplicationModule
+namespace EFTS_Application.ApplicationModule
 {
     public static class ApplicationModule
     {

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Lab_Application.Interfaces;
-using Lab_Application.Services;
+using EFTS_Application.Interfaces;
+using EFTS_Application.Services;
 using Lab_PresentationDesktop.Views;
 
 namespace Lab_PresentationDesktop.FormularioViews
@@ -45,8 +45,6 @@ namespace Lab_PresentationDesktop.FormularioViews
 
         private void CadastraNovoStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
         }
 
         private void FechaForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -1,19 +1,13 @@
-﻿using Lab_Application.Interfaces;
-using Lab_WebUI.Models.LoginModels;
+﻿using EFTS_Application.Interfaces;
+using EFTS_WebUI.Models.LoginModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lab_WebUI.Controllers
+namespace EFTS_WebUI.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController(IUsuarioServices services, ISessaoHelper sessao) : Controller
     {
-        private readonly IUsuarioServices _services;
-        private readonly ISessaoHelper _sessao;
-
-        public LoginController(IUsuarioServices services, ISessaoHelper sessao)
-        {
-            _services = services;
-            _sessao = sessao;
-        }
+        private readonly IUsuarioServices _services = services;
+        private readonly ISessaoHelper _sessao = sessao;
 
         public IActionResult Index()
         {

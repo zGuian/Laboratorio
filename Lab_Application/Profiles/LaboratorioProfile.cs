@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Lab_Application.DTOs;
-using Lab_Domain.Entities;
+using EFTS_Application.DTOs;
+using EFTS_Domain.Entities;
 
-namespace Lab_Application.Profiles
+namespace EFTS_Application.Profiles
 {
     public class LaboratorioProfile : Profile
     {

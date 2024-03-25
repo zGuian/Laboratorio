@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Lab_WebUI.Models.LoginModels
+namespace EFTS_WebUI.Models.LoginModels
 {
     public class LoginModel
     {

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Lab_Application.Profiles;
+using EFTS_Application.Profiles;
 
-namespace Lab_WebUI.Configuration
+namespace EFTS_WebUI.Configuration
 {
     public static class AutoMapConfig
     {

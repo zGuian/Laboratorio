@@ -1,7 +1,7 @@
-﻿using FluentValidation;
-using Lab_Domain.Entities;
+﻿using EFTS_Domain.Entities;
+using FluentValidation;
 
-namespace Lab_Application.Validators
+namespace EFTS_Application.Validators
 {
     public class LaboratorioValidator : AbstractValidator<Laboratorio>
     {

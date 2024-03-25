@@ -1,4 +1,4 @@
-﻿using Lab_Domain.Entities;
+﻿using EFTS_Domain.Entities;
 using Lab_Infrastructure.MappingData;
 
 namespace Lab_Infrastructure.Queries
@@ -10,15 +10,15 @@ namespace Lab_Infrastructure.Queries
             var table = ContextMap.GetLaboratorioTable();
             var query = $@"
 			UPDATE [dbo].[{table}]
-			SET 
-			[CL_TipoEquipamento] = @tipoEquipamento, 
-			[CL_SerialNumber] = @serialNumber, 
-			[CL_Inventario] = @inventario, 
-			[CL_Cadeado] = @Cadeado, 
-			[CL_Tecnico] = @NomeTecnico, 
-			[CL_Entrada] = @Entrada, 
-			[CL_Saida] = @Saida, 
-			[CL_Armario] = @Armario, 
+			SET
+			[CL_TipoEquipamento] = @tipoEquipamento,
+			[CL_SerialNumber] = @serialNumber,
+			[CL_Inventario] = @inventario,
+			[CL_Cadeado] = @Cadeado,
+			[CL_Tecnico] = @NomeTecnico,
+			[CL_Entrada] = @Entrada,
+			[CL_Saida] = @Saida,
+			[CL_Armario] = @Armario,
 			[CL_Observacao] = @Observacao
 			WHERE [Id] = @Id";
 

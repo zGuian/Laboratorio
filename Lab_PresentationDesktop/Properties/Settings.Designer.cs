@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lab_PresentationDesktop.Properties {
+namespace EFTS_PresentationDesktop.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

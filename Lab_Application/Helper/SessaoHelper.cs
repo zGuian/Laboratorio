@@ -1,9 +1,9 @@
-﻿using Lab_Application.Interfaces;
-using Lab_Domain.Entities;
+﻿using EFTS_Application.Interfaces;
+using EFTS_Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace Lab_Application.Helper
+namespace EFTS_Application.Helper
 {
     public class SessaoHelper : ISessaoHelper
     {
@@ -13,6 +13,7 @@ namespace Lab_Application.Helper
         {
             _httpContext = httpContext;
         }
+
         public Usuario BuscarSessaoUsuario()
         {
             var sessaoUsuario = _httpContext.HttpContext.Session.GetString("sessaoUsuarioLogado");

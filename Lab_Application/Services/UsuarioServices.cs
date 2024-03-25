@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Lab_Application.DTOs;
-using Lab_Application.Interfaces;
-using Lab_Domain.Entities;
+using EFTS_Application.DTOs;
+using EFTS_Application.Interfaces;
+using EFTS_Domain.Entities;
 
-namespace Lab_Application.Services
+namespace EFTS_Application.Services
 {
     public class UsuarioServices : IUsuarioServices
     {
@@ -18,7 +18,6 @@ namespace Lab_Application.Services
 
         public async Task<Usuario> Buscar(string login)
         {
-
             return await _repository.BuscarAsync(login);
         }
 

@@ -1,22 +1,17 @@
-﻿using Lab_Application.DTOs;
-using Lab_Application.Filters;
-using Lab_Application.Interfaces;
-using Lab_Domain.Entities;
-using Lab_WebUI.Models.UsuariosModels;
+﻿using EFTS_Application.DTOs;
+using EFTS_Application.Filters;
+using EFTS_Application.Interfaces;
+using EFTS_Domain.Entities;
+using EFTS_WebUI.Models.UsuariosModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lab_WebUI.Controllers
+namespace EFTS_WebUI.Controllers
 {
     [Route("usuario")]
     [PagSomenteAdmin]
-    public class UsuarioController : Controller
+    public class UsuarioController(IUsuarioServices services) : Controller
     {
-        private readonly IUsuarioServices _services;
-
-        public UsuarioController(IUsuarioServices services)
-        {
-            _services = services;
-        }
+        private readonly IUsuarioServices _services = services;
 
         [Route("lista")]
         public async Task<IActionResult> Index()

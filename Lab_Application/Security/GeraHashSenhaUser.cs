@@ -1,12 +1,12 @@
-﻿using Lab_Application.Interfaces;
-using Lab_Domain.Entities;
+﻿using EFTS_Application.Interfaces;
+using EFTS_Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace Lab_Application.Services
+namespace EFTS_Application.Services
 {
     public static class GeraHashSenhaUser
     {
-        private readonly static IUsuarioServices _service;
+        private static readonly IUsuarioServices _service;
 
         public static void ConverteSenhaEmHash(Usuario usuario)
         {
@@ -22,11 +22,14 @@ namespace Lab_Application.Services
             {
                 case PasswordVerificationResult.Failed:
                     return false;
+
                 case PasswordVerificationResult.Success:
                     return true;
+
                 case PasswordVerificationResult.SuccessRehashNeeded:
                     _service.Atualizar(usuario.Id, usuario);
                     return true;
+
                 default:
                     throw new InvalidOperationException();
             }

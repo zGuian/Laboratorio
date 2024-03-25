@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using Lab_Application.Interfaces;
+using EFTS_Application.Interfaces;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using System.Data;
@@ -24,7 +24,7 @@ namespace Lab_Infrastructure.Factory
             }
         }
 
-        //METODO QUE FAZ EXECUÇÃO NO BANCO 
+        //METODO QUE FAZ EXECUÇÃO NO BANCO
         public async Task SaveData<T>(string storedProcedure, T parameters, string connectionName = "Default")
         {
             using (IDbConnection connection = new SqlConnection(configuration.GetConnectionString(connectionName)))

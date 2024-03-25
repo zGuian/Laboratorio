@@ -1,4 +1,4 @@
-﻿namespace Lab_Domain.Enums
+﻿namespace EFTS_Domain.Enums
 {
     public enum EnumArmario : int
     {

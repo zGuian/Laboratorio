@@ -1,9 +1,9 @@
-using Lab_Application.Filters;
-using Lab_WebUI.Models.ErrorModels;
+using EFTS_Application.Filters;
+using EFTS_WebUI.Models.ErrorModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Lab_WebUI.Controllers
+namespace EFTS_WebUI.Controllers
 {
     [PagUsuarioLogado]
     public class HomeController : Controller

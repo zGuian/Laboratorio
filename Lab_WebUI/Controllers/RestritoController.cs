@@ -1,7 +1,7 @@
-﻿using Lab_Application.Filters;
+﻿using EFTS_Application.Filters;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lab_WebUI.Controllers
+namespace EFTS_WebUI.Controllers
 {
     [PagUsuarioLogado]
     public class RestritoController : Controller

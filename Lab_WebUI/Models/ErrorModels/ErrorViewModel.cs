@@ -1,4 +1,4 @@
-namespace Lab_WebUI.Models.ErrorModels
+namespace EFTS_WebUI.Models.ErrorModels
 {
     public class ErrorViewModel
     {

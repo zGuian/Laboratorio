@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lab_Application\Lab_Application.csproj" />
-    <ProjectReference Include="..\Lab_Infrastructure\Lab_Infrastructure.csproj" />
+    <ProjectReference Include="..\Lab_Application\EFTS_Application.csproj" />
+    <ProjectReference Include="..\Lab_Infrastructure\EFTS_Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,15 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{7838BBEB-069C-4029-829E-4693210DA6EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_WebUI", "Lab_WebUI\Lab_WebUI.csproj", "{626039DF-2F21-4512-A58E-626B51E5A7D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFTS_WebUI", "Lab_WebUI\EFTS_WebUI.csproj", "{626039DF-2F21-4512-A58E-626B51E5A7D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_Application", "Lab_Application\Lab_Application.csproj", "{901C61FA-16C3-4ED2-8EC9-F51B9D740FB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFTS_Application", "Lab_Application\EFTS_Application.csproj", "{901C61FA-16C3-4ED2-8EC9-F51B9D740FB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_Domain", "Lab_Domain\Lab_Domain.csproj", "{5BAE3CFE-34D6-44FE-B009-29AD42E36610}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFTS_Domain", "Lab_Domain\EFTS_Domain.csproj", "{5BAE3CFE-34D6-44FE-B009-29AD42E36610}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_Infrastructure", "Lab_Infrastructure\Lab_Infrastructure.csproj", "{2A88195E-6D35-419F-BA36-305AD1FD3158}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFTS_Infrastructure", "Lab_Infrastructure\EFTS_Infrastructure.csproj", "{2A88195E-6D35-419F-BA36-305AD1FD3158}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_PresentationDesktop", "Lab_PresentationDesktop\Lab_PresentationDesktop.csproj", "{34502711-12DA-494C-B258-4062196DD8FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFTS_PresentationDesktop", "Lab_PresentationDesktop\EFTS_PresentationDesktop.csproj", "{34502711-12DA-494C-B258-4062196DD8FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{707F2F3D-8117-4E4A-BDEB-8001F6326D38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

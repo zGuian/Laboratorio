@@ -1,5 +1,5 @@
-﻿using Lab_Domain.Entities;
-using Lab_Domain.Enums;
+﻿using EFTS_Domain.Entities;
+using EFTS_Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -15,7 +15,7 @@ namespace Lab_Infrastructure.ConfigurationDataBase
             builder.Property(x => x.TipoEquipamento)
                 .HasColumnName("CL_TipoEquipamento")
                 .HasMaxLength(1)
-                .HasConversion(x => x.ToString(), 
+                .HasConversion(x => x.ToString(),
                 x => (EnumTipoEquipamento)Enum.Parse(typeof(EnumTipoEquipamento), x))
                 .IsRequired();
 

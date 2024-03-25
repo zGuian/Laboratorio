@@ -1,4 +1,4 @@
-﻿namespace Lab_Domain.Entities
+﻿namespace EFTS_Domain.Entities
 {
     public class Tecnico
     {

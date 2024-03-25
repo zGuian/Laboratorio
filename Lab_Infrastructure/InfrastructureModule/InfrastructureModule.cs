@@ -1,9 +1,9 @@
-﻿using Lab_Application.Interfaces;
+﻿using EFTS_Application.Interfaces;
 using Lab_Infrastructure.Factory;
 using Lab_Infrastructure.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Lab_Application.ApplicationModule
+namespace Lab_Infrastructure.InfrastructureModule
 {
     public static class InfrastructureModule
     {

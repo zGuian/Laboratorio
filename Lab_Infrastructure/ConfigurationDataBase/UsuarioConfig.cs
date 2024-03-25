@@ -1,5 +1,5 @@
-﻿using Lab_Domain.Entities;
-using Lab_Domain.Enums;
+﻿using EFTS_Domain.Entities;
+using EFTS_Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

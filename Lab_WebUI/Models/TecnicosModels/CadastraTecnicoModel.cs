@@ -1,4 +1,4 @@
-﻿namespace Lab_WebUI.Models.TecnicoModels
+﻿namespace EFTS_WebUI.Models.TecnicoModels
 {
     internal class CadastraTecnicoModel
     {

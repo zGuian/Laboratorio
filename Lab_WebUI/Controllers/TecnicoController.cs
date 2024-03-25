@@ -1,12 +1,12 @@
-﻿using Lab_Application.DTOs;
-using Lab_Application.Filters;
-using Lab_Application.Interfaces;
-using Lab_WebUI.Models.ErrorModels;
-using Lab_WebUI.Models.TecnicoModels;
+﻿using EFTS_Application.DTOs;
+using EFTS_Application.Filters;
+using EFTS_Application.Interfaces;
+using EFTS_WebUI.Models.ErrorModels;
+using EFTS_WebUI.Models.TecnicoModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Lab_WebUI.Controllers
+namespace EFTS_WebUI.Controllers
 {
     [Route("Tecnicos")]
     [PagUsuarioLogado]

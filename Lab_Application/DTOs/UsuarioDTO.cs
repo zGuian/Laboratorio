@@ -1,6 +1,6 @@
-﻿using Lab_Domain.Enums;
+﻿using EFTS_Domain.Enums;
 
-namespace Lab_Application.DTOs
+namespace EFTS_Application.DTOs
 {
     public class UsuarioDTO
     {

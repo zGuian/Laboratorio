@@ -1,4 +1,4 @@
-﻿namespace Lab_WebUI.Configuration
+﻿namespace EFTS_WebUI.Configuration
 {
     public static class RouteMapConfig
     {

@@ -1,6 +1,6 @@
-﻿using Lab_Application.Interfaces;
-using Lab_Application.Services;
-using Lab_Domain.Entities;
+﻿using EFTS_Application.Interfaces;
+using EFTS_Application.Services;
+using EFTS_Domain.Entities;
 using Lab_Infrastructure.DataContext;
 using Microsoft.EntityFrameworkCore;
 
@@ -79,7 +79,7 @@ namespace Lab_Infrastructure.Repository
             }
             catch (Exception)
             {
-                //Esta exceção está sendo ignorada propositalmente no dia 14/03/2024. 
+                //Esta exceção está sendo ignorada propositalmente no dia 14/03/2024.
                 //Fazer tratamento de erro.
             }
         }

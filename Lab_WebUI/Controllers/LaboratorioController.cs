@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using Lab_Application.DTOs;
-using Lab_Application.Filters;
-using Lab_Application.Interfaces;
-using Lab_Domain.Enums;
-using Lab_WebUI.Models.LaboratorioModels;
+using EFTS_Application.DTOs;
+using EFTS_Application.Filters;
+using EFTS_Application.Interfaces;
+using EFTS_Domain.Enums;
+using EFTS_WebUI.Models.LaboratorioModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Lab_WebUI.Controllers
+namespace EFTS_WebUI.Controllers
 {
     [Route("laboratorio")]
     [PagUsuarioLogado]

@@ -1,11 +1,14 @@
-using Lab_Application.ApplicationModule;
-using Lab_WebUI.Configuration;
+using EFTS_Application.ApplicationModule;
+using EFTS_WebUI.Configuration;
+using Lab_Infrastructure.InfrastructureModule;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+builder.Services.AddDataBaseConfiguration(builder);
 builder.Services
     .AddApplicationServices()
     .AddInfrastructureServices();
+
 Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
 var app = builder.Build();

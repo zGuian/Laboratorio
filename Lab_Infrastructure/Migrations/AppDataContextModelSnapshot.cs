@@ -22,7 +22,7 @@ namespace Lab_Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Lab_Domain.Entities.Laboratorio", b =>
+            modelBuilder.Entity("EFTS_Domain.Entities.Laboratorio", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,7 +86,7 @@ namespace Lab_Infrastructure.Migrations
                     b.ToTable("TB_Laboratorio", "dbo");
                 });
 
-            modelBuilder.Entity("Lab_Domain.Entities.Usuario", b =>
+            modelBuilder.Entity("EFTS_Domain.Entities.Usuario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

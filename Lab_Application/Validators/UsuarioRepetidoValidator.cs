@@ -1,7 +1,7 @@
-﻿using Lab_Application.Interfaces;
+﻿using EFTS_Application.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
-namespace Lab_Application.Validators
+namespace EFTS_Application.Validators
 {
     public class UsuarioRepetidoValidator : ValidationAttribute
     {

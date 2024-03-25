@@ -1,8 +1,8 @@
-﻿using Lab_Application.Validators;
-using Lab_Domain.Enums;
+﻿using EFTS_Application.Validators;
+using EFTS_Domain.Enums;
 using System.ComponentModel;
 
-namespace Lab_WebUI.Models.UsuariosModels
+namespace EFTS_WebUI.Models.UsuariosModels
 {
     public class AtualizaUsuarioModel
     {

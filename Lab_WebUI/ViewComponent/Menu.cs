@@ -1,8 +1,8 @@
-﻿using Lab_WebUI.Models.UsuariosModels;
+﻿using EFTS_WebUI.Models.UsuariosModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace Lab_WebUI.ViewComponents
+namespace EFTS_WebUI.ViewComponents
 {
     public class Menu : ViewComponent
     {

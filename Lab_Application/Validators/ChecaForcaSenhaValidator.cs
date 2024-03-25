@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Lab_Application.Validators
+namespace EFTS_Application.Validators
 {
     public class ChecaForcaSenhaValidator : ValidationAttribute
     {
